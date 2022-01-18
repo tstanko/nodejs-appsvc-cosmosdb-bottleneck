@@ -9,7 +9,7 @@ on:
         - main
 
 env:
-  AZURE_WEBAPP_NAME: "apkaZGithubActions"    # set this to your application's name
+  AZURE_WEBAPP_NAME: "mojaapkanaazura"    # set this to your application's name
   LOAD_TEST_RESOURCE: "mojaapkanaazuraLoadTest"
   LOAD_TEST_RESOURCE_GROUP: "mojaapkanaazuranortheurope-rg"
   AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
