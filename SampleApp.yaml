@@ -1,8 +1,6 @@
 version: v0.1
-testName: SampleAppTest
-testPlan: SampleApp.jmx
-description: 'SampleApp Test Run'
+testName: SampleApp
+testPlan: SampleApp_Secrets.jmx
+description: 'SampleApp Test Run with secrets'
 engineInstances: 1
-failureCriteria:
-- avg(response_time_ms) > 5000
-- percentage(error) > 20
+
