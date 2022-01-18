@@ -14,8 +14,8 @@ env:
   LOAD_TEST_RESOURCE_GROUP: "mojaapkanaazuranortheurope-rg"
   AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
   NODE_VERSION: '14.15.1'                # set this to the node version to use
-  LOCATION: "North Europe"
-  APPINSIGHTLOCATION: "North Europe"
+  LOCATION: "North EU"
+  APPINSIGHTLOCATION: "North EU"
   DATABASEACCOUNTLOCATION: "northeurope"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
