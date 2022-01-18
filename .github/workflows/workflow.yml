@@ -18,6 +18,14 @@ env:
   APPINSIGHTLOCATION: "North EU"
   DATABASEACCOUNTLOCATION: "northeurope"
 
+  secrets: |
+    [
+      {
+      "name": "appToken",
+      "value": "${{ secrets.MY_SECRET }}"
+      }
+    ]
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build-and-deploy:
