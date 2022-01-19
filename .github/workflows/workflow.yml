@@ -36,6 +36,13 @@ jobs:
         continue-on-error: false
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
+          secrets: |
+            [
+                {
+                "name": "appToken",
+                "value": "${{ secrets.MY_SECRET }}"
+                 }
+            ]
           
     # Deploy Arm template
       - name: Deploy ARM Template
@@ -52,13 +59,7 @@ jobs:
             $setAppSettings = az webapp config appsettings set --name "${{ env.AZURE_WEBAPP_NAME }}" --resource-group "${{ env.AZURE_WEBAPP_NAME }}-rg" --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true
             $setAppSettings = az webapp config appsettings set --name "${{ env.AZURE_WEBAPP_NAME }}" --resource-group "${{ env.AZURE_WEBAPP_NAME }}-rg" --settings HEADER_VALUE="${{ secrets.MY_SECRET }}"
           azPSVersion: "latest"
-          secrets: |
-            [
-                {
-                "name": "appToken",
-                "value": "${{ secrets.MY_SECRET }}"
-                 }
-            ]
+          
           
       - name: 'Deploy to Azure WebApp'
         uses: azure/webapps-deploy@v2
