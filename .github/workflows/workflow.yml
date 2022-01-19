@@ -79,18 +79,20 @@ jobs:
       - name: 'Azure Load Testing'
         uses: azure/load-testing@v1
         with:
+          secrets: |
+           [
+               {
+               "name": "appToken",
+               "value": "${{ secrets.MY_SECRET }}"
+               }
+           ]    
           loadTestConfigFile: 'SampleApp.yaml'
           loadTestResource: ${{ env.LOAD_TEST_RESOURCE }}
           resourceGroup: ${{ env.LOAD_TEST_RESOURCE_GROUP }}
           
+            
       - uses: actions/upload-artifact@v2
         with:
           name: loadTestResults
           path: ${{ github.workspace }}/loadTest
-          secrets: |
-            [
-                {
-                "name": "appToken",
-                "value": "${{ secrets.MY_SECRET }}"
-                 }
-            ]
+          
