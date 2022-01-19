@@ -82,6 +82,11 @@ jobs:
           loadTestConfigFile: 'SampleApp.yaml'
           loadTestResource: ${{ env.LOAD_TEST_RESOURCE }}
           resourceGroup: ${{ env.LOAD_TEST_RESOURCE_GROUP }}
+          
+      - uses: actions/upload-artifact@v2
+        with:
+          name: loadTestResults
+          path: ${{ github.workspace }}/loadTest
           secrets: |
             [
                 {
@@ -89,8 +94,3 @@ jobs:
                 "value": "${{ secrets.MY_SECRET }}"
                  }
             ]
-      
-      - uses: actions/upload-artifact@v2
-        with:
-          name: loadTestResults
-          path: ${{ github.workspace }}/loadTest
