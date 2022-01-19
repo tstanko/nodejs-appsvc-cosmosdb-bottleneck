@@ -36,13 +36,7 @@ jobs:
         continue-on-error: false
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-          secrets: |
-            [
-                {
-                "name": "appToken",
-                "value": "${{ secrets.MY_SECRET }}"
-                 }
-            ]
+          
           
     # Deploy Arm template
       - name: Deploy ARM Template
@@ -59,6 +53,7 @@ jobs:
             $setAppSettings = az webapp config appsettings set --name "${{ env.AZURE_WEBAPP_NAME }}" --resource-group "${{ env.AZURE_WEBAPP_NAME }}-rg" --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true
             $setAppSettings = az webapp config appsettings set --name "${{ env.AZURE_WEBAPP_NAME }}" --resource-group "${{ env.AZURE_WEBAPP_NAME }}-rg" --settings HEADER_VALUE="${{ secrets.MY_SECRET }}"
           azPSVersion: "latest"
+         
           
           
       - name: 'Deploy to Azure WebApp'
@@ -87,6 +82,13 @@ jobs:
           loadTestConfigFile: 'SampleApp.yaml'
           loadTestResource: ${{ env.LOAD_TEST_RESOURCE }}
           resourceGroup: ${{ env.LOAD_TEST_RESOURCE_GROUP }}
+          secrets: |
+            [
+                {
+                "name": "appToken",
+                "value": "${{ secrets.MY_SECRET }}"
+                 }
+            ]
       
       - uses: actions/upload-artifact@v2
         with:
