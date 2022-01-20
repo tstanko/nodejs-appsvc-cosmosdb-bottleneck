@@ -9,7 +9,7 @@ on:
         - main
 
 env:
-  AZURE_WEBAPP_NAME: "mojaapkanaazura z key vault puszczana z pipelina"    # set this to your application's name
+  AZURE_WEBAPP_NAME: "mojaapkanaazurazkeyvault"    # set this to your application's name
   LOAD_TEST_RESOURCE: "LoadTesting15stycznia"
   LOAD_TEST_RESOURCE_GROUP: "15_stycznia_Resource_group"
   AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
