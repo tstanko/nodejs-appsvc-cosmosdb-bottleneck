@@ -1,5 +1,5 @@
 version: v0.1
-testName: SampleApp-withGithubSecrets
+testName: SampleAppFine
 testPlan: SampleApp_Secrets.jmx
 description: 'SampleApp Test Run with secrets'
 engineInstances: 1
