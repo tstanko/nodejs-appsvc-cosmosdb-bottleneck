@@ -9,9 +9,9 @@ on:
         - main
 
 env:
-  AZURE_WEBAPP_NAME: "mojaapkanaazurazkeyvault"    # set this to your application's name
-  LOAD_TEST_RESOURCE: "LoadTesting15stycznia"
-  LOAD_TEST_RESOURCE_GROUP: "15_stycznia_Resource_group"
+  AZURE_WEBAPP_NAME: "mojaapkanaazuraZXC"    # set this to your application's name
+  LOAD_TEST_RESOURCE: "mojaapkanaazuraLoadTest"
+  LOAD_TEST_RESOURCE_GROUP: "mojaapkanaazuranortheurope-rg"
   AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
   NODE_VERSION: '14.15.1'                # set this to the node version to use
   LOCATION: "North EU"
